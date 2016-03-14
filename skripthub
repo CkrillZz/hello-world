@@ -7,7 +7,8 @@ on rightclicking:
         send "&cVous êtes déjà en combat"
       if {%player%.pvpstatue} is false:
         remove 1 green wool from player's inventory
-        add 1 stone sword named "&fEpee" to player's inventory
+        add 1 stone sword named "&9Epee" to player's inventory
+        add 1 golden apple named "&9Pomme d'Or" to player's inventory
         add 1 red wool named "&cDesactiver le PvP" to player's inventory
 #  Armure c     
 #
@@ -28,6 +29,7 @@ on rightclicking:
         if {%player%.pvpstatue.cooldown} is false:
           remove 1 red wool from player's inventory
           remove 1 stone sword from player's inventory
+          remove 1 golden apple from player's inventory
 #  Armure c     
 #
 #
@@ -42,3 +44,26 @@ on rightclicking:
       if {%player%.pvpstatue} is true:
         remove 1 compass from player's inventory
         send "&cVous êtes en combat"
+        
+on damage:
+  if world is "Hub":
+    if {%player%.pvpstatue} is true:
+     stop
+    if {%player%.pvpstatue} is false:
+      cancel event
+      
+on death of a player:
+  if world is "Hub":
+    if {%player%.pvpstatue} is true:
+# Respawn J
+      add 1 stone sword named "&9Epee" to player's inventory
+      add 1 golden apple named "&9Pomme d'Or" to player's inventory
+      add 1 red wool named "&cDesactiver le PvP" to player's inventory  
+#  Armure c     
+#
+#
+#
+    if {%player%.pvpstatue} is false:
+      loop all player's:
+        if player has permission "admin.skript":
+          send "&cUn joueur est mort dans le Hub (Issue1-1)"
