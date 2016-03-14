@@ -67,3 +67,6 @@ on death of a player:
       loop all player's:
         if player has permission "admin.skript":
           send "&cUn joueur est mort dans le Hub (Issue1-1)"
+on item break:
+  if world is "Hub":
+    cancel event
