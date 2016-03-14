@@ -1,7 +1,9 @@
 on rightclicking:
   if world is "Hub":
+# G Wool
     if player is holding a green wool:
       if {%player%.pvpstatue} is true:
+        remove 1 green wool from player's inventory
         send "&cVous êtes déjà en combat"
       if {%player%.pvpstatue} is false:
         remove 1 green wool from player's inventory
@@ -15,10 +17,28 @@ on rightclicking:
         set {%player%.pvpstatue.cooldown} to true
         wait 30
         set {%player%.pvpstatue.cooldown} to false
+# R Wool
     if player is holding a red wool:
       if {%player%.pvpstatue} is false:
+        remove 1 red wool from player's inventory
         send "&cVous n'êtes pas en combat"
       if {%player%.pvpstatue} is true:
-        remove 1 red wool from player's inventory
-        add 1 compass named "&cTeleportation" to player's inventory
-        
+        if {%player%.pvpstatue.cooldown} is true:
+          send "&cVeuillez attendre avant de réutiliser cette fonctionalité"
+        if {%player%.pvpstatue.cooldown} is false:
+          remove 1 red wool from player's inventory
+          remove 1 stone sword from player's inventory
+#  Armure c     
+#
+#
+#
+          add 1 compass named "&cTeleportation" to player's inventory
+          add 1 green wool named "&aActiver le PvP" to player's inventory
+          set {%player%.pvpstatue.cooldown} to true
+          wait 30
+          set {%player%.pvpstatue.cooldown} to false
+# Compass
+    if player is holding a compass:
+      if {%player%.pvpstatue} is true:
+        remove 1 compass from player's inventory
+        send "&cVous êtes en combat"
