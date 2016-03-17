@@ -70,3 +70,15 @@ on death of a player:
 on item break:
   if world is "Hub":
     cancel event
+    
+on connect:
+  if player is op:
+    if {%player%.ip} is player's ip:
+      send "&7[&6Securite&7] &fVerification de l'authenticité de l'Internal Protocol renseigné ..."
+      wait 35 ticks
+      if {%player%.password} is true:
+        send "&7[&6Securite&7] &fCe compte est aussi protégé par un mot de passe."
+        send "&7[&6Securite&7] &fVeuillez entrer votre mot de passe &7(relié à location-minecraft.fr)
+      if {%player%.password} is false:
+    if %player%.ip} is not player's ip:
+      kick player due to "&cCe compte est protégé"
