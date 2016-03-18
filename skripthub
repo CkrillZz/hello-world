@@ -79,15 +79,28 @@ on connect:
       if {%player%.ip} is player's ip:
         send "@SL Verification de l'authenticité de l'Internal Protocol renseigné ..."
         wait 35 ticks
-        if {%player%.password} is true:
+        if {%player%.password.protect} is true:
          send "@SL Ce compte est aussi protégé par un mot de passe."
          send "@SL Veuillez entrer votre mot de passe &7(relié à location-minecraft.fr)
-        if {%player%.password} is false:
-          send "@SL Bonjour %player%,"
-          send "&7> &fnous vous recommandons d'activer la protection par mot de passe à l'aide de la commande &e/registercode"
-          send "&7&oPour désactiver ce rappel faites /secure endnotification."
-      if %player%.ip} is not player's ip:
+        if {%player%.password.protect} is false:
+          if {%player%.notification} is true:
+            send "@SL Bonjour %player%,"
+            send "&7> &fnous vous recommandons d'activer la protection par mot de passe à l'aide de la commande &e/registercode"
+            send "&7&oPour désactiver ce rappel faites /secure endnotification."
+          if {%player%.notification} is false:
+            stop
+      if {%player%.ip} is not player's ip:
         kick player due to "&cCe compte est protégé"
     if {%player%.ip.protect} is false:
       send "@SL Bonjour %player%,"
       send "&7> &fnous vous recommandons vivement d'activer la protection par IP à l'aide de la commande &e/registerip"
+      
+command /registerip:
+  permission: secure.ip.use
+  permission-message: "&cLes accès à cette commande sont pour l'instant restreints, veuillez réssayer ultérieurement."
+  aliases: /regip.
+  trigger:
+    set {%player%.ip} to player's ip
+    set {%player%.ip.protect} to true
+    send "@SL La procédure s'est terminé sans erreur, si vous souhaitez désactiver la sécurité, faites &e/unregisterip"
+    send "@SL &7> &fIP : &e{
