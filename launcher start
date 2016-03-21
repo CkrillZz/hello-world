@@ -1,0 +1,10 @@
+Frame1:
+
+private GameVersion myVersion = new myVersion("1.6.4", GameType.V1_7_10);
+
+Frame2:
+
+private GameInfos myGame = new GameInfos("LegendaryFactions", V1_7_10, false);
+
+Frame3
+
