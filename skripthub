@@ -104,3 +104,53 @@ command /registerip:
     set {%player%.ip.protect} to true
     send "@SL La procédure s'est terminé sans erreur, si vous souhaitez désactiver la sécurité, faites &e/unregisterip"
     send "@SL &7> &fIP : &e{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ADD secure:
+
+command /secure [<text>] [<text>]:
+  trigger:
+    if arg-1 is "regip":
+      if arg-2 is not set:
+        send "&7[&6Securite&7]&f Précisez le nom du joueur.
+      if arg-2 is set:
+        if arg-2 is a player:
+          set {ip.%arg-2%.protect} to true
+#research ; findname
