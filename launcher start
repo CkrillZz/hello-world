@@ -2,18 +2,24 @@ Minerais:
 - Obsidienne :
    Epée : 7,5
     Epée Lourde : 8,5
-   Casque : 4
-   Plastron : 9
-   Jambières : 7
-   Bottes : 4
+   Casque : 3
+   Plastron : 8
+   Jambières : 6
+   Bottes : 3
 - Amethyst :
    Epée : 8
     Epée Lourde : 9
+   Casque : 4
+   Plastron : 9
+   Jambières : 6
+   Bottes : 4
+- Topaze :
+   Epée : 8,5
+    Epée Lourde : 9,5
    Casque : 5
    Plastron : 10
    Jambières : 7
    Bottes : 5
-
 - Saphir :
    Epée : 9
     Epée Lourde : 10
@@ -29,3 +35,10 @@ Minerais:
    Jambières : 9
    Bottes : 7
    
+Mobs:
+- Sanglier :
+   Drops:
+    - Boar Leather (x1)
+   Vie: 20
+
+
