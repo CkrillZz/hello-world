@@ -1,10 +1,31 @@
-Frame1:
+Minerais:
+- Obsidienne :
+   Epée : 7,5
+    Epée Lourde : 8,5
+   Casque : 4
+   Plastron : 9
+   Jambières : 7
+   Bottes : 4
+- Amethyst :
+   Epée : 8
+    Epée Lourde : 9
+   Casque : 5
+   Plastron : 10
+   Jambières : 7
+   Bottes : 5
 
-private GameVersion myVersion = new myVersion("1.6.4", GameType.V1_7_10);
-
-Frame2:
-
-private GameInfos myGame = new GameInfos("LegendaryFactions", V1_7_10, false);
-
-Frame3
-
+- Saphir :
+   Epée : 9
+    Epée Lourde : 10
+   Casque : 6
+   Plastron : 11
+   Jambières : 8
+   Bottes : 6
+- Necrum :
+   Epée : 9,5
+    Epée Lourde : 10,5
+   Casque : 7
+   Plastron : 12
+   Jambières : 9
+   Bottes : 7
+   
